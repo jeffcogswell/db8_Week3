@@ -8,7 +8,6 @@ Console.WriteLine(first.GetColor());
 //first.SetColor("White");
 Console.WriteLine(first.GetColor());
 
-
 // first.Make = "Ford";  // We cannot write the value of Make.
 
 
