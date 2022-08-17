@@ -150,24 +150,50 @@ foreach (Rectangle rect in mylist)
 
 //
 // Dictionaries
-//
+// Remember dictionaries map from one thing to another.
+// But we can also think of them as "key-value pairs".
+// Try to embrace *both* ways of looking at it.
 
 Console.WriteLine();
 Console.WriteLine("Dictionary Practice");
 Dictionary<string, int> spelling = new Dictionary<string, int>();
 
 // Two ways to add to the dictionary
-spelling["One"] = 1;
+spelling["One"] = 1;     // The string "One" maps to 1. OR think of it as we added the pair ("One", 1)
 spelling["Fifty"] = 50;
 
 // or...
 
-spelling.Add("One Hundred", 100);
+spelling.Add("One Hundred", 100); // Same effect but we're adding this mapping as a single pair.
+
+// Let's loop!
+//foreach (var pair in spelling)
+// In general we just use "var" here. But for this example, let's drill down in and
+// see what the actual type is and use it. But in the future, just use var.
+foreach (KeyValuePair<string, int> pair in spelling)
+{
+	Console.WriteLine($"{pair.Key} maps to {pair.Value}");
+}
 
 
 //
 // Enums
-//
+// Just like "bool" can hold two possible values, enums have a limited amount.
+// This "Season" example allows for four different values.
+// Technically they're stored as numbers, starting with 0.
+
+Console.WriteLine();
+Console.WriteLine("Enum tests");
+Season now = Season.Summer;
+Console.WriteLine(now);
+
+enum Season
+{
+	Winter,
+	Spring,
+	Summer,
+	Autumn
+}
 
 class Rectangle
 {
